@@ -11,7 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
-README.md
+INFO.md
 git-sim_media
 
 # Editor directories and files
