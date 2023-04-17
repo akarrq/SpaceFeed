@@ -1,9 +1,11 @@
-import * as bootstrap from "bootstrap";
+import { renderCardsList } from "./card";
+import getData from "./api";
+import saveName from "./name";
 
 import "../scss/style.scss";
 
-document.querySelector("#app").innerHTML = `
-  <div>
-    
-  </div>
-`;
+const nbrOfArticles = 5;
+
+getData(nbrOfArticles).then((articles) => renderCardsList(articles));
+
+saveName();
