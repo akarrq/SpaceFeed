@@ -18,7 +18,41 @@
         />, on your SpaceFeed!
       </h1>
     </div>
-    <div class="container py-4 px-3 mx-auto" id="articlesList"></div>
+    <main
+      class="container d-flex flex-wrap py-4 px-3 mx-auto"
+      id="articlesList"
+    ></main>
+    <nav class="navbar navbar-expand-lg fixed-bottom bg-primary">
+      <div class="container-fluid">
+        <span class="navbar-brand text-light">SpaceFeed</span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active text-light"
+                aria-current="page"
+                href="index.html"
+                >Article list</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-light" href="library.html">Library</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <script type="module" src="js/main.js"></script>
   </body>
 </html>

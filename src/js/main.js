@@ -4,7 +4,7 @@ import saveName from "./name";
 
 import "../scss/style.scss";
 
-const nbrOfArticles = 5;
+const nbrOfArticles = 15;
 
 getData(nbrOfArticles).then((articles) => renderCardsList(articles));
 
