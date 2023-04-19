@@ -23,7 +23,6 @@ export function renderCard(article) {
   element.style = "width: 20rem;";
   element.innerHTML = card(article);
   document.querySelector("#articlesList").appendChild(element);
-  console.log("jest");
 }
 
 export function renderCardsList(articles) {

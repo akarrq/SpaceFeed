@@ -9,7 +9,7 @@ async function getData(nbrOfArticles = 5) {
     }
   });
 
-  return data.results;
+  return data;
 }
 
 export default getData;
