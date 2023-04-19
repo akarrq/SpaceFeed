@@ -4,8 +4,23 @@ import saveName from "./name";
 
 import "../scss/style.scss";
 
-const nbrOfArticles = 15;
+const defaultNbrOfArt = 15;
 
-getData(nbrOfArticles).then((articles) => renderCardsList(articles));
+function changeNbrOfArticles() {
+  const input = document.querySelector("#nbrOfArticles");
+  input.value = defaultNbrOfArt;
 
+  input.addEventListener("input", (e) => {
+    let nbrOfArticles = e.target.value;
+    renderArticles(nbrOfArticles);
+    console.log(`wczytałem ${nbrOfArticles} artykułów`);
+  });
+}
+
+function renderArticles(nbr = defaultNbrOfArt) {
+  getData(nbr).then((articles) => renderCardsList(articles));
+}
+
+changeNbrOfArticles();
 saveName();
+renderArticles();

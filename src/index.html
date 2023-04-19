@@ -22,8 +22,9 @@
       class="container d-flex flex-wrap py-4 px-3 mx-auto"
       id="articlesList"
     ></main>
+
     <nav class="navbar navbar-expand-lg fixed-bottom bg-primary">
-      <div class="container-fluid">
+      <div class="container-fluid flrx-grow-1">
         <span class="navbar-brand text-light">SpaceFeed</span>
         <button
           class="navbar-toggler"
@@ -48,6 +49,19 @@
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="library.html">Library</a>
+            </li>
+            <li class="nav-item d-flex align-items-center">
+              <div class="container-fluid input-group input-group-sm">
+                <span class="input-group-text">Load default:</span>
+                <input
+                  id="nbrOfArticles"
+                  type="number"
+                  class="form-control form-control-sm"
+                  min="1"
+                  max="100"
+                />
+                <span class="input-group-text" id="">articles</span>
+              </div>
             </li>
           </ul>
         </div>
