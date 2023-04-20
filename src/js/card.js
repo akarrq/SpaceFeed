@@ -26,7 +26,6 @@ export function renderCard(article) {
 }
 
 export function renderCardsList(articles) {
-  document.querySelector("#articlesList").innerHTML = "";
   articles.forEach((article) => {
     renderCard(article);
   });

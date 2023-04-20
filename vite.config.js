@@ -1,4 +1,5 @@
 export default {
+  base: "/SpaceFeed/",
   root: "./src/",
   build: {
     outDir: "../dist",

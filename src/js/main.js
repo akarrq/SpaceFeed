@@ -1,6 +1,7 @@
 import { renderCardsList } from "./card";
 import getData from "./api";
 import saveName from "./name";
+import spinner from "./spinner";
 
 import "../scss/style.scss";
 
@@ -17,17 +18,37 @@ function changeNbrOfArticles() {
 
   input.addEventListener("input", (e) => {
     let nbrOfArticles = e.target.value;
+    document.querySelector("#articlesList").innerHTML = "";
     renderArticles(nbrOfArticles);
   });
+}
+
+function loadMoreArticles(nextPage) {
+  spinner("ADD");
+  let isLoading = false;
+  document.addEventListener("scroll", (e) => {
+    if (
+      window.innerHeight + Math.ceil(window.pageYOffset) >=
+        document.body.offsetHeight - 50 &&
+      !isLoading
+    ) {
+      isLoading = true;
+      renderArticles(nextPage.split("limit=")[1]);
+    }
+  });
+  isLoading = false;
 }
 
 function renderArticles(nbr = defaultNbrOfArt) {
   getData(nbr).then((data) => {
     renderCardsList(data.results);
     showNumberOfArticles(nbr, data.count);
+    loadMoreArticles(data.next);
+    spinner("REMOVE");
   });
 }
 
 changeNbrOfArticles();
 saveName();
+spinner("ADD");
 renderArticles();
