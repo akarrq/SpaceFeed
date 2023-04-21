@@ -8,20 +8,14 @@
   </head>
   <body>
     <div class="container py-4 px-3 mx-auto">
-      <h1>
-        Hello
-        <input
-          id="name"
-          class="border border-0 border-bottom border-2"
-          type="text"
-          placeholder="name"
-        />, on your SpaceFeed!
-      </h1>
+      <h1>This is your library</h1>
     </div>
     <main
       class="container d-flex flex-wrap pt-3 pb-5 px-3 mx-auto"
-      id="articlesList"
-    ></main>
+      id="library"
+    >
+      <h5>Nothing here yet! Add some articles from your feed to save them.</h5>
+    </main>
 
     <nav class="navbar navbar-expand-lg fixed-bottom bg-primary">
       <div class="container-fluid flrx-grow-1">
@@ -40,34 +34,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link active text-light"
-                aria-current="page"
-                href="index.html"
-                >Articles</a
-              >
+              <a class="nav-link active text-light" href="index.html">Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="library.html">Library</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <div class="container-fluid input-group input-group-sm">
-                <span class="input-group-text">Load default:</span>
-                <input
-                  id="nbrOfArticles"
-                  type="number"
-                  class="form-control form-control-sm"
-                  min="1"
-                  max="100"
-                />
-                <span class="input-group-text">articles.</span>
-                <span class="input-group-text" id="artCounter"></span>
-              </div>
+              <a
+                class="nav-link text-light"
+                aria-current="page"
+                href="library.html"
+                >Library</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </nav>
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/library.js"></script>
   </body>
 </html>

@@ -1,14 +1,16 @@
-import { renderCardsList } from "./card";
+import { renderCardsList } from "./cards";
 import getData from "./api";
 import saveName from "./name";
 import spinner from "./spinner";
+import { setLibraryListener } from "./library";
 
 import "../scss/style.scss";
 
 const defaultNbrOfArt = 15;
 
-function showNumberOfArticles(articlesDisplayed, allArticles) {
+function showNumberOfArticles(allArticles) {
   const counter = document.querySelector("#artCounter");
+  const articlesDisplayed = document.querySelectorAll("article").length;
   counter.textContent = `On site: ${articlesDisplayed} of ${allArticles} articles.`;
 }
 
@@ -42,8 +44,9 @@ function loadMoreArticles(nextPage) {
 function renderArticles(nbr = defaultNbrOfArt) {
   getData(nbr).then((data) => {
     renderCardsList(data.results);
-    showNumberOfArticles(nbr, data.count);
+    showNumberOfArticles(data.count);
     loadMoreArticles(data.next);
+    setLibraryListener(data.results);
     spinner("REMOVE");
   });
 }

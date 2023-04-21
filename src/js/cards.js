@@ -1,12 +1,13 @@
 export function card(article) {
-  const { title, image_url, summary, url, news_site, published_at } = article;
+  const { id, title, image_url, summary, url, news_site, published_at } =
+    article;
   return `
     <img src="${image_url}" class="card-img-top" alt="">
     <div class="card-body">
       <h5 class="card-title">${title}</h5>
       <p class="card-text">${summary}</p>
       <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Go to article</a>
-      <button type="button" class="btn btn-secondary">Add to library</button>
+      <button type="button" class="btn btn-secondary addToLibrary ${id}">Add to library</button>
     </div>
     <div class="d-flex justify-content-between card-footer">
       <small class="text-body-secondary">Site: ${news_site}</small>
