@@ -1,14 +1,15 @@
+import getData from "./api";
+import { renderCard } from "./cards";
+
 import "../scss/style.scss";
 
-export function setLibraryListener(loadedArticles) {
-  document.querySelectorAll(".addToLibrary").forEach((button) => {
-    button.addEventListener("click", saveToLibrary);
-  });
+import { renderCardsList } from "./cards";
 
-  let articlesList = [...loadedArticles];
-  console.log(articlesList);
+const artInLibrary = JSON.parse(localStorage.getItem("artInLibrary"));
+
+function renderLibrary() {
+  document.querySelector("#articlesList").innerHTML = "";
+  renderCardsList(artInLibrary);
 }
 
-export function saveToLibrary(e) {
-  const artId = e.target.classList[3];
-}
+renderLibrary();
