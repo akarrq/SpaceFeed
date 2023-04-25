@@ -1,4 +1,5 @@
 import { renderCardsList } from "./cards";
+import { btnListener, articleCollector } from "./handleLibrary";
 import getData from "./api";
 import saveName from "./name";
 import spinner from "./spinner";
@@ -40,44 +41,12 @@ function loadMoreArticles(nextPage) {
   isLoading = false;
 }
 
-function addToLibrary() {
-  if (localStorage.getItem("artInLibrary") === null)
-    localStorage.setItem("artInLibrary", "[]");
-  const artInLibrary = JSON.parse(localStorage.getItem("artInLibrary"));
-
-  document.querySelectorAll(".addToLibrary").forEach((button) => {
-    button.addEventListener("click", (e) => {
-      const artId = parseInt(e.target.classList[3], 10);
-      const article = historyOfLoadedArticles.find(
-        (element) => element.id === artId
-      );
-      artInLibrary.push(article);
-      localStorage.setItem("artInLibrary", JSON.stringify(artInLibrary));
-      console.log(artInLibrary);
-    });
-  });
-}
-
-let historyOfLoadedArticles = [];
-
-function articleCollector(articles) {
-  historyOfLoadedArticles.push(...articles);
-  function removeDuplicateObjects(arr, property) {
-    return [...new Map(arr.map((obj) => [obj[property], obj])).values()];
-  }
-  historyOfLoadedArticles = removeDuplicateObjects(
-    historyOfLoadedArticles,
-    "id"
-  );
-  console.log(historyOfLoadedArticles);
-}
-
 function renderArticles(nbr = defaultNbrOfArt) {
   getData(nbr).then((data) => {
     renderCardsList(data.results);
     showNumberOfArticles(data.count);
     loadMoreArticles(data.next);
-    addToLibrary();
+    btnListener();
     articleCollector(data.results);
     spinner("REMOVE");
   });

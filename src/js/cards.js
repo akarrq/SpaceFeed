@@ -7,7 +7,11 @@ export function card(article) {
       <h5 class="card-title">${title}</h5>
       <p class="card-text">${summary}</p>
       <a href="${url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Go to article</a>
-      <button type="button" class="btn btn-secondary addToLibrary ${id}">Add to library</button>
+      <button type="button" class="btn btn-secondary ${
+        isItInTheLibrary(id) ? "removeFromLibrary" : "addToLibrary"
+      } ${id}">${
+    isItInTheLibrary(id) ? "Remove from library" : "Add to library"
+  }</button>
     </div>
     <div class="d-flex justify-content-between card-footer">
       <small class="text-body-secondary">Site: ${news_site}</small>
@@ -16,6 +20,15 @@ export function card(article) {
       ).toLocaleString()}</small>
     </div>
   `;
+}
+
+function isItInTheLibrary(id) {
+  if (localStorage.getItem("artInLibrary") === null)
+    localStorage.setItem("artInLibrary", "[]");
+  const artInLibrary = JSON.parse(localStorage.getItem("artInLibrary"));
+  const article = artInLibrary.find((element) => element.id === id);
+  if (article) return true;
+  else return false;
 }
 
 export function renderCard(article) {

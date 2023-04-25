@@ -1,15 +1,18 @@
-import getData from "./api";
-import { renderCard } from "./cards";
-
 import "../scss/style.scss";
 
 import { renderCardsList } from "./cards";
+import { btnListener } from "./handleLibrary";
 
 const artInLibrary = JSON.parse(localStorage.getItem("artInLibrary"));
 
-function renderLibrary() {
-  document.querySelector("#articlesList").innerHTML = "";
-  renderCardsList(artInLibrary);
+export function renderLibrary() {
+  if (localStorage.getItem("artInLibrary") === null)
+    localStorage.setItem("artInLibrary", "[]");
+  if (artInLibrary.length) {
+    document.querySelector("#articlesList").innerHTML = "";
+    renderCardsList(artInLibrary);
+  }
 }
 
 renderLibrary();
+btnListener();
