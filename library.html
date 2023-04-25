@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library - SpaceFeed</title>
+  </head>
+  <body>
+    <div class="container py-4 px-3 mx-auto">
+      <h1>This is your library</h1>
+    </div>
+    <main
+      class="container d-flex flex-wrap pt-3 pb-5 px-3 mx-auto"
+      id="articlesList"
+    >
+      <h5>Nothing here yet! Add some articles from your feed to save them.</h5>
+    </main>
+
+    <nav class="navbar navbar-expand-lg fixed-bottom bg-primary">
+      <div class="container-fluid flrx-grow-1">
+        <span class="navbar-brand text-light">SpaceFeed</span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active text-light" href="index.html">Feed</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link text-light"
+                aria-current="page"
+                href="library.html"
+                >Library</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <script type="module" src="js/library.js"></script>
+  </body>
+</html>
