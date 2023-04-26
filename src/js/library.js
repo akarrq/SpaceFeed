@@ -3,6 +3,7 @@ import { Collapse } from "bootstrap";
 
 import { renderCardsList } from "./cards";
 import { btnListener } from "./handleLibrary";
+import { sortLibrary } from "./sortLibrary";
 
 const artInLibrary = JSON.parse(localStorage.getItem("artInLibrary"));
 
@@ -17,3 +18,4 @@ export function renderLibrary() {
 
 renderLibrary();
 btnListener();
+sortLibrary(artInLibrary);
