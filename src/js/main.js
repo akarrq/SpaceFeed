@@ -5,6 +5,7 @@ import saveName from "./name";
 import spinner from "./spinner";
 
 import "../scss/style.scss";
+import { Collapse } from "bootstrap";
 
 const defaultNbrOfArt = 15;
 

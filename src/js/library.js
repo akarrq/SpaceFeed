@@ -1,4 +1,5 @@
 import "../scss/style.scss";
+import { Collapse } from "bootstrap";
 
 import { renderCardsList } from "./cards";
 import { btnListener } from "./handleLibrary";
