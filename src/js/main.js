@@ -15,15 +15,29 @@ function showNumberOfArticles(allArticles) {
   counter.textContent = `On site: ${articlesDisplayed} of ${allArticles} articles.`;
 }
 
+function debounce(func, timeout = 300) {
+  let timer;
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      func.apply(this, args);
+    }, timeout);
+  };
+}
+
 function changeNbrOfArticles() {
   const input = document.querySelector("#nbrOfArticles");
   input.value = defaultNbrOfArt;
 
-  input.addEventListener("input", (e) => {
-    let nbrOfArticles = e.target.value;
-    document.querySelector("#articlesList").innerHTML = "";
-    renderArticles(nbrOfArticles);
-  });
+  input.addEventListener(
+    "input",
+    debounce((e) => {
+      let nbrOfArticles = e.target.value;
+      document.querySelector("#articlesList").innerHTML = "";
+      spinner("ADD");
+      renderArticles(nbrOfArticles);
+    })
+  );
 }
 
 function loadMoreArticles(nextPage) {
