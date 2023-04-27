@@ -4,27 +4,21 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SpaceFeed</title>
-    <script type="module" crossorigin src="/SpaceFeed/assets/main-bace6283.js"></script>
+    <title>Library - SpaceFeed</title>
+    <script type="module" crossorigin src="/SpaceFeed/assets/library-ad25e184.js"></script>
     <link rel="modulepreload" crossorigin href="/SpaceFeed/assets/bootstrap.esm-30b798d6.js">
     <link rel="stylesheet" href="/SpaceFeed/assets/bootstrap-a717560c.css">
   </head>
   <body>
     <div class="container py-4 px-3 mx-auto">
-      <h1>
-        Hello
-        <input
-          id="name"
-          class="border border-0 border-bottom border-2"
-          type="text"
-          placeholder="name"
-        />, on your SpaceFeed!
-      </h1>
+      <h1>This is your library</h1>
     </div>
     <main
       class="container d-flex flex-wrap pt-3 pb-5 px-3 mx-auto"
       id="articlesList"
-    ></main>
+    >
+      <h5>Nothing here yet! Add some articles from your feed to save them.</h5>
+    </main>
 
     <nav class="navbar navbar-expand-lg fixed-bottom bg-primary">
       <div class="container-fluid flrx-grow-1">
@@ -43,31 +37,25 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link active text-light"
-                aria-current="page"
-                href="index.html"
-                >Articles</a
-              >
+              <a class="nav-link active text-light" href="index.html">Feed</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="library.html">Library</a>
-            </li>
-            <li class="nav-item d-flex align-items-center">
-              <div class="container-fluid input-group input-group-sm">
-                <span class="input-group-text">Load default:</span>
-                <input
-                  id="nbrOfArticles"
-                  type="number"
-                  class="form-control form-control-sm"
-                  min="1"
-                  max="100"
-                />
-                <span class="input-group-text">articles.</span>
-              </div>
+              <a
+                class="nav-link text-light"
+                aria-current="page"
+                href="library.html"
+                >Library</a
+              >
             </li>
           </ul>
-          <p class="text-light mb-0" id="artCounter"></p>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-primary border" id="sortDate">
+              Sort by published ^⌄
+            </button>
+            <button type="button" class="btn btn-primary border" id="sortTitle">
+              Sort by title ^⌄
+            </button>
+          </div>
         </div>
       </div>
     </nav>
