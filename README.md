@@ -1,4 +1,4 @@
-# SpaceFeed [in progress]
+# SpaceFeed
 
 A channel displaying spaceflight news using the Spaceflight News API, based on Bootstrap
 
